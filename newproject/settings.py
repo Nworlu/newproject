@@ -83,7 +83,8 @@ WSGI_APPLICATION = 'newproject.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/newproject',
+        # default='postgresql://postgres:postgres@localhost:5432/newproject',
+        default='postgres://newproject:p7C9lUQnfkjeyNTIHpC9yfyZwGuDErgv@dpg-cf6l7o4gqg47vk0saau0-a/newproject',
         conn_max_age=600
     )
     # 'default': {
