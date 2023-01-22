@@ -1,0 +1,20 @@
+databases:
+  - name: newproject
+    databaseName: newproject
+    user: newproject
+
+services:
+  - type: web
+    name: newproject
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn newproject.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: newproject
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
